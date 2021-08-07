@@ -1,9 +1,9 @@
 # fast_file_processor
 
-### Steps to run your code. As less steps we are to run, better for you (Hint: Docker)
+#### Steps to run your code. As less steps we are to run, better for you (Hint: Docker)
 
 
-### Details of all the tables and their schema, [with commands to recreate them]
+#### Details of all the tables and their schema, [with commands to recreate them]
 We have created a normalized data model to increase the insert performance,
 
 Data model:
@@ -22,17 +22,9 @@ Data model:
         );
 
     Sample Data:
-    postman=# select * from file_processor.sku_master limit 5;
-
-         sku_id |         sku         |                                                                                             sku_description                                                                                             
---------+---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      1 | a-ability-see-gun   | According member fine program. Concern single too ahead my. Loss onto which include listen later present.        Election sport quite notice why. Find system writer might. Sing prevent compare black.
-      2 | a-above-its-focus   | Go audience old. Law main federal area myself.   Leave various leave discover consumer hotel. Safe fall up compare plant affect stuff.
-      3 | a-act-cut-either    | Data tell enter. Because stock along continue follow respond off value. Trial try exactly type simply full.
-      4 | a-activity          | Discussion itself those stand beat Mr. Any from event.   Training cultural avoid artist quite say figure. Play fill cultural know education arm rate reflect. Me investment pull star.
-      5 | a-act-spring-camera | Difference compare society best structure democratic team machine. Administration item light among.      Each when capital condition election miss defense. Left after treat listen law girl.
-(5 rows)
-
+    postman=# select * from file_processor.sku_master limit 10;
+    
+    ![Screenshot from 2021-08-07 13-47-47](https://user-images.githubusercontent.com/30022078/128593817-67b2f456-46f4-4e4f-a990-1089b9dcc340.png)
 
 
 2. raw_transaction_data
@@ -50,21 +42,13 @@ Data model:
 
     Sample Data:
     postman=# select * from file_processor.raw_transaction_data limit 10;
-                              name       | sku_id 
-                        -----------------+--------
-                         Bryce Jones     | 211773
-                         John Robinson   |  92587
-                         Theresa Taylor  | 384663
-                         Roger Huerta    |  74265
-                         John Buckley    | 403219
-                         Tiffany Johnson | 108981
-                         Roy Golden DDS  | 175567
-                         David Wright    | 220305
-                         Anthony Burch   |  22452
-                         Lauren Smith    | 167266
-                        (10 rows)
-### What is done from “Points to achieve” and number of entries in all your tables with sample 10 rows from each
 
-### What is not done from “Points to achieve”. If not achieved, write the possible reasons and current workarounds.
+![Screenshot from 2021-08-07 13-49-17](https://user-images.githubusercontent.com/30022078/128593871-aec6f88d-04e0-43c8-b3d3-51b60351353b.png)
 
-### What would you improve if given more days
+    
+    
+#### What is done from “Points to achieve” and number of entries in all your tables with sample 10 rows from each
+
+#### What is not done from “Points to achieve”. If not achieved, write the possible reasons and current workarounds.
+
+#### What would you improve if given more days
