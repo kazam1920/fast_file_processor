@@ -34,7 +34,7 @@ source fast_processor/bin/activate
 **Install docker latest version on your system**  
 for ubuntu 18.0.04 --> https://phoenixnap.com/kb/how-to-install-docker-on-ubuntu-18-04
 
-**Build Docker Image** (This will take around 20 min)
+**Build Docker Image**  
 ```sh
 cd DOCKER_VERSION
 #docker build -t <imageName:version> dockerFilePath
