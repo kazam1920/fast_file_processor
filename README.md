@@ -125,10 +125,16 @@ constraint fk_raw_transaction_data_sku_id foreign key (sku_id) references file_p
 &nbsp;&nbsp;&nbsp;&nbsp;Sample Data:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postman=# select * from file_processor.raw_transaction_data limit 10;  
 
-![Screenshot from 2021-08-07 13-49-17](https://user-images.githubusercontent.com/30022078/128593871-aec6f88d-04e0-43c8-b3d3-51b60351353b.png)
+![Screenshot from 2021-08-07 13-49-17](https://user-images.githubusercontent.com/30022078/128593871-aec6f88d-04e0-43c8-b3d3-51b60351353b.png)  
 
-    
-    
+
+
+3. **Aggregated function sample records**  (Records --> 222024)  
+
+![Screenshot from 2021-08-08 15-41-22](https://user-images.githubusercontent.com/30022078/128628529-6ef48d50-28ee-4a26-b638-bff6114ede4b.png)
+
+
+
 ## What is done from “Points to achieve”    
 
 1. Used OOPS Concepts  
