@@ -1,0 +1,56 @@
+-- Execute in psql
+-- temp table to prepare sku_master table
+CREATE TABLE file_processor.temp_data
+(
+name varchar(50),
+sku varchar(50) ,
+sku_description TEXT
+);
+
+
+-- Execute python script to populate sku master raw data
+-- Import parma_dict and connect function from constants.py and file_processor_manager.py
+
+conn = connect(param_dic)
+schema = "file_processor"
+table = "temp_data"
+bulk_insert_data(conn, df, schema, table, truncate=True)
+
+
+
+-- after importing data in temp table, execute below query to populate sku_master table.
+with cte as 
+(
+select sku,sku_description, row_number() over(partition by sku order by sku_description) as rn
+from file_processor.temp_data
+)
+insert into file_processor.sku_master (sku,sku_description)  
+select sku,sku_description from cte 
+where rn=1;
+
+
+
+
+-- Create Postgres Function to get agg values
+
+drop function name_product_agg;
+create or replace function name_product_agg () 
+	returns table (
+		cust_name varchar,
+		product_count bigint
+	) 
+	language plpgsql
+as $$
+begin
+	return query 
+	SELECT
+	"name" as cust_name, count(sku_id) as product_count
+	from file_processor.raw_transaction_data
+	group by "name";
+end;$$
+;
+
+
+-- select * from name_product_agg();
+
+

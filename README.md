@@ -146,4 +146,5 @@ Covered all mentioned requirements as per my understanding, Although requirement
 ## What would you improve if given more days  
 
 1. Proper auditing and alerting mechanism in case of sucess or failure needs to be maintained.  
-2. Instead of Docker , i'll host this application in AWS lambda and it will triggered automatically whenever csv file is uploaded to specified S3 path.
+2. Instead of Docker , i'll host this application in AWS lambda and it will triggered automatically whenever csv file is uploaded to specified S3 path.  
+3. Prepare proper docstring, error response.
