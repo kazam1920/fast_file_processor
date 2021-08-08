@@ -131,20 +131,19 @@ constraint fk_raw_transaction_data_sku_id foreign key (sku_id) references file_p
     
 ## What is done from “Points to achieve”    
 
-1. Used OOPS Concepts
-2. File is processed within 10 seconds on local machine, and tested same on aws hosted instance it was completed in 40 seconds it usually depends on internet speed. (performance is already fast so didn't used multithreading)
-3. It Supports for updating existing products description in the sku_master, used UPSERT but to achieve incremental import (SCD-2).
-4. All product details are ingested into a single table (raw_transactions_data).
-5. Used Postgres function to generate `name` and `no. of products` aggregated value, as a CSV file. 
+1. Used OOPS Concepts  
+2. File is processed within 10 seconds on local machine, and tested same on aws hosted instance it was completed in 40 seconds it usually depends on internet speed. (performance is already fast so didn't used multithreading)  
+3. It Supports for updating existing products description in the sku_master, used UPSERT but to achieve incremental import (SCD-2) used multiThreading.  
+4. All product details are ingested into a single table (raw_transactions_data).  
+5. Used Postgres function to generate `name` and `no. of products` aggregated value, as a CSV file.  
 
 
 ## What is not done from “Points to achieve”. If not achieved, write the possible reasons and current workarounds.  
 
-Covered all mentioned requirements as per my understanding, Although requirements are not much clear, so there is high possibility of change request once analysed by reviewer.
+Covered all mentioned requirements as per my understanding, Although requirements are not much clear, so there is high possibility of change request once analysed by reviewer.  
 
 
 ## What would you improve if given more days  
 
-1. Proper auditing and alerting mechanism in case of sucess or failure needs to be maintained.
+1. Proper auditing and alerting mechanism in case of sucess or failure needs to be maintained.  
 2. Instead of Docker , i'll host this application in AWS lambda and it will triggered automatically whenever csv file is uploaded to specified S3 path.
-3. Already copying dataframe directly to database is working faster, in future we can try to use incremental import with multithreading/multiprocessing (depending on CPU and IO bound task).
