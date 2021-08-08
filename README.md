@@ -22,6 +22,7 @@ sku_id serial primary key,
 sku varchar(50),  
 sku_description TEXT  
 );  
+ALTER TABLE file_processor.sku_master ADD CONSTRAINT sku_master_un UNIQUE (sku);  
 ```        
 &nbsp;&nbsp;&nbsp;&nbsp;Sample Data:  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postman=# select * from file_processor.sku_master limit 10;  
